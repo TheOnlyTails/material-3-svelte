@@ -1,0 +1,110 @@
+.m3-button {
+  transition: all 0.2s ease;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+
+  block-size: 40px;
+  padding-inline: 24px;
+
+  cursor: pointer;
+  border-radius: 20px;
+  border: none;
+
+  &.has-icon {
+    padding-inline-start: 16px;
+  }
+
+  &::before {
+    transition: all var(--m3-duration-short-4) ease;
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: currentColor;
+    opacity: 0;
+    border-radius: inherit;
+  }
+
+  &.button-elevated {
+    background-color: var(--m3-surface);
+    box-shadow: var(--m3-elevation-1);
+    color: var(--m3-primary);
+
+    &:hover {
+      box-shadow: var(--m3-elevation-2);
+    }
+  }
+
+  &.button-filled {
+    background-color: var(--m3-primary);
+    color: var(--m3-on-primary);
+
+    &:hover {
+      box-shadow: var(--m3-elevation-1);
+    }
+
+    &:active::before {
+      opacity: var(--m3-hover-state-opacity);
+    }
+  }
+
+  &.button-tonal {
+    background-color: var(--m3-secondary-container);
+    color: var(--m3-on-secondary-container);
+
+    &:hover {
+      box-shadow: var(--m3-elevation-1);
+    }
+  }
+
+  &.button-outlined {
+    background-color: var(--m3-surface);
+    outline: 1px solid var(--m3-outline);
+    color: var(--m3-primary);
+
+    &:focus {
+      outline: 1px solid currentColor;
+    }
+  }
+
+  &.button-text {
+    background-color: transparent;
+    color: var(--m3-primary);
+  }
+
+  &.disabled {
+    pointer-events: none;
+    cursor: auto;
+    background-color: var(--m3-on-surface);
+    box-shadow: none;
+    opacity: var(--m3-disabled-container-opacity);
+    color: var(--m3-on-surface);
+
+    :global(> *) {
+      opacity: var(--m3-disabled-content-opacity);
+    }
+  }
+
+  &:hover::before {
+    opacity: var(--m3-hover-state-opacity);
+  }
+
+  &:focus {
+    outline: none;
+
+    &::before {
+      opacity: var(--m3-focus-state-opacity);
+    }
+  }
+
+  &:active::before {
+    opacity: var(--m3-pressed-state-opacity);
+  }
+
+  :global(.md-label) {
+    text-align: center;
+  }
+}

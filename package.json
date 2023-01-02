@@ -1,0 +1,33 @@
+{
+	"name": "material-3-svelte",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "svelte-kit sync && svelte-package",
+		"prepublishOnly": "echo 'Did you mean to publish `./package/`, instead of `./`?' && exit 1",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"lint": "prettier --plugin-search-dir . --check .",
+		"format": "prettier --plugin-search-dir . --write ."
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-auto": "^1.0.0",
+		"@sveltejs/kit": "^1.0.1",
+		"@sveltejs/package": "^1.0.1",
+		"autoprefixer": "^10.4.13",
+		"cssnano": "^5.1.14",
+		"greset": "^2.0.0",
+		"material-symbols": "^0.4.2",
+		"postcss": "^8.4.20",
+		"prettier": "^2.8.1",
+		"prettier-plugin-svelte": "^2.9.0",
+		"sass": "^1.57.1",
+		"svelte": "^3.55.0",
+		"svelte-check": "^3.0.1",
+		"svelte-preprocess": "^5.0.0",
+		"tslib": "^2.4.1",
+		"typescript": "^4.9.4",
+		"vite": "^4.0.3"
+	},
+	"type": "module"
+}
