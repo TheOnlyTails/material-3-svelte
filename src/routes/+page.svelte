@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { Button } from "$lib"
-	import Icon from "$lib/Icon/Icon.svelte"
-	import Label from "$lib/Label/Label.svelte"
+	import { Badge, Button, Icon, Label } from "$lib"
 </script>
 
 <Label type="headline-large">Buttons</Label>
 <Button type="elevated">
-	<Icon icon="waving_hand" slot="icon" />
+	<Icon icon="waving_hand" slot="icon">
+		<Badge slot="badge">0</Badge>
+	</Icon>
 	Elevated Button
 </Button>
 
